@@ -15,13 +15,8 @@ public class Calendar {
 	 */
 	public static void main(String args[]) {
 		int givenYear = Integer.parseInt(args[0]);
-	    int firstOfTheMonthSunday = 0;
-	    //// Write the necessary initialization code, and replace the condition
-	    //// of the while loop with the necessary condition 
-	 	while (year <= givenYear) {
-	 		if (dayOfWeek == 1 && dayOfMonth == 1){
- 				firstOfTheMonthSunday++;
-	 		}		
+	    
+	    while (year <= givenYear) {	
 	 		if (dayOfWeek == 1){
 	 			System.out.println(dayOfMonth+"/"+month+"/"+year+" Sunday");
 	 		} else {
@@ -65,12 +60,13 @@ public class Calendar {
 	} 
 		 
     // Returns true if the given year is a leap year, false otherwise.
-	private static boolean isLeapYear(int year) {
-	 if (((year % 4) == 0) && ((year % 100) != 0)){
+	public static boolean isLeapYear(int year) {
+	    if (((year % 4) == 0) && ((year % 100) != 0)){
 	    	return true;
-	    } else {
-
-		return false;
+	    	} else if ((year % 400) == 0){
+			return true;
+		} else {
+			return false;
 		}
 	}
 	// Returns the number of days in the given month and year.

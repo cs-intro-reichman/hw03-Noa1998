@@ -1,7 +1,7 @@
 /** String processing exercise 2. */
 public class UniqueChars {
     public static void main(String[] args) {  
-        String str = args[0];
+        String str = String.join(" ", args);
         System.out.println(uniqueChars(str));
     }
 
@@ -11,7 +11,16 @@ public class UniqueChars {
      * unless they are space characters.
      */
     public static String uniqueChars(String s) {
-        // Replace the following statement with your code
-        return null;
+        int i = 0;
+        String out = "";
+
+        for (i=0; i<s.length(); i++) {
+            char n = s.charAt(i);
+            if (out.indexOf(n) == -1 || n == ' '){
+                out += n;
+            }
+        }
+
+        return out;
     }
 }
